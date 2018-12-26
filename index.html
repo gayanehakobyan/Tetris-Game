@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Tetris</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+	<div id="container">
+		<canvas id="nextPatern" width="120px" height="120px"></canvas>
+		<canvas id="tetris" width="300px" height="600px"></canvas>
+		<button type="button" id="start">Start</button>
+		<h1 id="score"></h1>
+	</div>
+	<div id="gameOver">
+		<p>Game Over!!!</p>
+		<button type="button" id="restart">Try again</button>
+	</div>
+	<script src="./tetromino.js"></script>
+	<script src="./main.js"></script>
+	<script src="./smallCanvas.js"></script>
+</body>
+
+</html>
