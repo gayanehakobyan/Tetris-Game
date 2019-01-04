@@ -183,7 +183,7 @@ function clear(){
 function block(){
 	for(let r = 0; r <activeExample.length; r++){
 		for(let c = 0; c < activeExample.length; c++){
-			if(Y+r < 0){
+			if(Y+r <= 0){
 				points = 0;
 				document.getElementById('container').style.display = "none";
 				document.getElementById('gameOver').style.visibility = "visible";
