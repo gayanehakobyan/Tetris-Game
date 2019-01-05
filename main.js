@@ -214,21 +214,47 @@ function clear(){
 
 // block tetromino in place
 function block(){                            
-	for(let r = 0; r < activeExample.length; r++){
-		for(let c = 0; c < activeExample.length; c++){
-			if(Y+r <= 0){// in this case "Game over"
-				cancelAnimationFrame(animation);                                               
+   for(let r = 0; r < activeExample.length; r++){
+	for(let c = 0; c < activeExample.length; c++){
+		if(Y+r <= 0){
+			let n = -1;
+			for(let i = 0; i < 2; i++){
+				let count = 0;
+				for(let j = 0; j < COL; j++){
+			    if(board[i][j] == empty){
+				count++;
+			    };						
+				}
+				if(count === 10 ){
+					n++;
+				}
+			}
+			if(n === 1) {
+				draw();
+			} 
+			if(n === 0){
+				for(let k = 0; k < activeExample[1].length; k++){
+					if(activeExample[1][k] === 1){
+						let posX = k+X
+						let id = 0 + "." + posX;
+						document.getElementById(id).style.background = randomColor;	
+					}
+				}
+			} 
+			cancelAnimationFrame(animation); 
+			setTimeout(() => {                                              
 				points = 0;               
 				document.getElementById('container').style.display = "none";
 				document.getElementById('gameOver').style.visibility = "visible";
-			};  
-			if(activeExample[r][c] === 1){  
-				board[Y+r][X+c] = randomColor;				
-			}  
-		};  
+			}, 200)
+		}  
+		if(activeExample[r][c] === 1){  
+			board[Y+r][X+c] = randomColor;				
+		}  
+	  };  
 	};
-	clear();
-	drawBoard();
+clear();
+drawBoard();
 };
 
 // add points in score
