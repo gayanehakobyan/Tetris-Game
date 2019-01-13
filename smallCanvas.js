@@ -1,9 +1,6 @@
 let nextPatern = document.getElementById("nextPatern");
 let smollBoard = []; 
 
-function drawSmallSquare(id, color){
-	document.getElementById(id).style.background = color;
-}
 
 for(let r = 0; r < 4; r++){
 	smollBoard[r] = [];
@@ -28,7 +25,7 @@ function drawSmallBoard(){
 	for(let r = 0; r < smollBoard.length; r++){
 		for(let c = 0; c <  smollBoard.length; c++){
 			let id ="s"+r+"."+c
-			drawSmallSquare(id, smollBoard[r][c]);
+			drawSquare(id, smollBoard[r][c]);
 		};
 	};
 };
@@ -40,7 +37,7 @@ function drawSmallCanvas(table,color){
 			if(table[r][c] === 1){
 				r +=1;
 	    		let id = "s"+r +"." + c;
-		    	drawSmallSquare(id, color)
+		    	drawSquare(id, color)
 		    	r-=1;
 	    	}
 		};

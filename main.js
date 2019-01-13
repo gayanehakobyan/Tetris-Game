@@ -54,7 +54,7 @@ function drawBoard(){
 
 //draw board with black and white color.
 drawBoard()
-score();
+
 
 
 
@@ -110,7 +110,7 @@ function move(){
 
 		}else {
 			firstDrop = false;
-		 	block(activeExample);
+		 	block();
 		 	drawSmallBoard()// Its drow small canvas withwhite color and border with black
 		 	generateRandomPiece();
 			X = 3;
@@ -312,7 +312,7 @@ function generateRandomPiece(){
 	}
 	example = arrOfTetrominos[2];
 	randomColor = arrOfTetrominos[3];
-	examoleN = 0
+	examoleN = 0;
 	activeExample=example[examoleN];
 }
 
@@ -343,6 +343,7 @@ function reload(){
 }
 
 function firstStep(){
+	score();
 	moveDown =true;
 	drop();
 }
